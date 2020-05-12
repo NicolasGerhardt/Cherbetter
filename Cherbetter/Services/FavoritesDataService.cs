@@ -16,9 +16,15 @@ namespace Cherbetter.Services
             connString = config.GetConnectionString("default");
         }
 
-        public IEnumerable<Favorite> GetFavoritesOnEmail(string email)
+        public IEnumerable<Favorite> GetFavoritesByEmail(string email)
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Favorite> GetFavoritesByTicketID(int TiceketID)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
