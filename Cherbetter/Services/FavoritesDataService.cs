@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Cherbetter.Models;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace Cherbetter.Services
             connString = config.GetConnectionString("default");
         }
 
-
+        public IEnumerable<Favorite> GetFavoritesOnEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

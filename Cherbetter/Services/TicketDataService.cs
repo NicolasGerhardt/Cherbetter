@@ -18,7 +18,7 @@ namespace Cherbetter.Services
             connString = config.GetConnectionString("default");
         }
 
-        public int AddTicket(Ticket Ticket)
+        public int AddTicket(Ticket ticket)
         {
             int result = 0;
 
@@ -27,7 +27,7 @@ namespace Cherbetter.Services
                 string command = "INSERT INTO Tickets (Title, TDescription, TStatus, Resolution) ";
                 command += "VALUES (@Title, @TDescription, @TStatus, @Resolution)";
 
-                result = conn.Execute(command, Ticket);
+                result = conn.Execute(command, ticket);
             }
 
             return result;
@@ -35,7 +35,18 @@ namespace Cherbetter.Services
 
         public int DeleteTicketByID(int id)
         {
-            throw new NotImplementedException();
+            //DELETE FROM Tickets WHERE TID=@id;
+
+            int result = 0;
+
+            using (var conn = new SqlConnection(connString))
+            {
+                string command = "DELETE FROM Tickets WHERE TID=@id";
+
+                result = conn.Execute(command, new { id });
+            }
+
+            return result;
         }
 
         public Ticket GetTicketByID(int id)
@@ -68,7 +79,18 @@ namespace Cherbetter.Services
 
         public int UpdateTicket(Ticket ticket)
         {
-            throw new NotImplementedException();
+            int result = 0;
+
+            using (var conn = new SqlConnection(connString))
+            {
+                string command = "UPDATE Tickets ";
+                command += "SET Title = @Title, TDescription =  @TDescription, TStatus = @TStatus, Resolution = @Resolution ";
+                command += "WHERE TID = @TID";
+
+                result = conn.Execute(command, ticket);
+            }
+
+            return result;
         }
     }
 }
