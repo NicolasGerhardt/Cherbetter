@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TicketDataService } from '../ticket-data';
+import { TicketItem } from '../interfaces/ticket';
 
 @Component({
     selector: 'app-ticket',
@@ -7,8 +9,20 @@ import { Component } from '@angular/core';
 })
 /** ticket component*/
 export class TicketComponent {
-    /** ticket ctor */
-    constructor() {
+  /** ticket ctor */
+  constructor(private menuData: TicketDataService,
+    private cartData: TicketDataService) { }
 
-    }
+  tikets: TicketItem[];
+
+  ngOnInit() {
+    this.ticketData.getTickets().subscribe(
+      (data: TicketItem[]) => {
+        this.tickets = data;
+      },
+      error => console.error(error)
+    );
+  }
+
+
 }
