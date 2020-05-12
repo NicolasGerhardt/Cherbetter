@@ -49,24 +49,25 @@ namespace Cherbetter.Controllers
             }
         }
 
-        [HttpPost("{ticket/new}")] //idk if this is right or not
-        public string AddTicket(Ticket t)
+        [HttpPost] //idk if this is right or not
+        public object AddTicket(Ticket t)
         {
             int result = ticketData.AddTicket(t);
 
             if (result == 1)
             {
-                return "Ticket added";
+                return new { Success = true, Message = "Ticket Added"};
             }
             else
             {
-                return "Something went wrong, ticket not added";
+                return new { Success = false, Message = "Ticket was not added" };
             }
         }
 
-        [HttpPost("{ticket/edit}")] //idk if this is right either
+        [HttpPut] //idk if this is right either
         public string UpdateTicket(Ticket t)
         {
+
             int result = ticketData.UpdateTicket(t);
 
             if (result == 1)
