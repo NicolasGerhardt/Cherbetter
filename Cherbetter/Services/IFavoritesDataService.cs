@@ -8,6 +8,6 @@ namespace Cherbetter.Services
 {
     public class IFavoritesDataService
     {
-        public IEnumerable<Favorite> GetFavoritesOnEmail(string email); //work in progress, not finished. Please remove this note when then is done <3
+        //public IEnumerable<Favorite> GetFavoritesOnEmail(string email); //work in progress, not finished. Please remove this note when then is done <3
     }
 }

@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { TicketItem } from './interfaces/ticket';
 
 @Injectable()
-export class MenuDataService {
+export class TicketDataService {
   constructor(private http: HttpClient) { }
 
-  getMenuItems() {
+  getTicketItems() {
     return this.http.get<TicketItem[]>('/api/ticket');
   }
 }
