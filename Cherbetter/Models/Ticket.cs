@@ -10,7 +10,7 @@ namespace Cherbetter.Models
         public int TID { get; set; }
         public string Title { get; set; }
         public string TDescription { get; set; }
-        public int TStatus { get; set; }
+        public string TStatus { get; set; }
         public string Resolution { get; set; }
     }
 }

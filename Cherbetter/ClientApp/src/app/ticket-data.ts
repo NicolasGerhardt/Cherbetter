@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TicketItem } from './interfaces/ticket';
+import { Ticket } from './interfaces/ticket';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TicketDataService {
   constructor(private http: HttpClient) { }
 
   getTicketItems() {
-    return this.http.get<TicketItem[]>('/api/ticket');
+    return this.http.get<Ticket[]>('/api/ticket');
+  }
+  getTicketByID(ID:number) {
+    return this.http.get<Ticket>(`/api/ticket/${ID}`)
   }
 }

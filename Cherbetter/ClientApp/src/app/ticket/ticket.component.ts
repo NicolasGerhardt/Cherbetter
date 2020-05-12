@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TicketDataService } from '../ticket-data';
-import { TicketItem } from '../interfaces/ticket';
+import { Ticket } from '../interfaces/ticket';
 
 @Component({
     selector: 'app-ticket',
@@ -12,11 +12,11 @@ export class TicketComponent {
   /** ticket ctor */
   constructor(private ticketData: TicketDataService) { }
 
-  tickets: TicketItem[];
+  tickets: Ticket[];
 
   ngOnInit() {
     this.ticketData.getTicketItems().subscribe(
-      (data: TicketItem[]) => {
+      (data: Ticket[]) => {
         this.tickets = data;
       },
       error => console.error(error)

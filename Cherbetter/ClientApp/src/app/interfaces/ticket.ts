@@ -1,7 +1,7 @@
-export interface TicketItem {
-  id: number;
-  title: string;
-  description: string;
-  resolution: number;
-  status: boolean;
+export interface Ticket {
+  TID: number;
+  Title: string;
+  TDescription: string;
+  TStatus: string;
+  Resolution: string;
 }
