@@ -1,1 +1,7 @@
-﻿<div style="border: 1px solid red">ticket Component</div>
+<h2>Tickets</h2>
+<div *ngFor="let ticket of tickets">
+  <h3>{{ticket.title}}</h3> 
+  <p>{{ticket.description}}</p>
+
+  <button (click)="favorite(ticket.id)">Favorite Ticket</button>
+</div>
