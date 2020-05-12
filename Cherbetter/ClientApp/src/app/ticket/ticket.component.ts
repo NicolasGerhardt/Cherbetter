@@ -10,13 +10,12 @@ import { TicketItem } from '../interfaces/ticket';
 /** ticket component*/
 export class TicketComponent {
   /** ticket ctor */
-  constructor(private menuData: TicketDataService,
-    private cartData: TicketDataService) { }
+  constructor(private ticketData: TicketDataService) { }
 
-  tikets: TicketItem[];
+  tickets: TicketItem[];
 
   ngOnInit() {
-    this.ticketData.getTickets().subscribe(
+    this.ticketData.getTicketItems().subscribe(
       (data: TicketItem[]) => {
         this.tickets = data;
       },
