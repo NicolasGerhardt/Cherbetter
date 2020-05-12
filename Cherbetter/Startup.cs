@@ -28,6 +28,7 @@ namespace Cherbetter
                 configuration.RootPath = "ClientApp/dist";
             });
             // TODO: update with acutal Class below.
+            services.AddTransient<IFavoritesDataService, FavoritesDataService>();
             services.AddTransient<ITicketDataService, TicketDataService>();
         }
 

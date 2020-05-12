@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cherbetter.Services
 {
-    public class IFavoritesDataService
+    public interface IFavoritesDataService
     {
         public IEnumerable<Favorite> GetFavoritesOnEmail(string email); //work in progress, not finished. Please remove this note when then is done <3
     }
