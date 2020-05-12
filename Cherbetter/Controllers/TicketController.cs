@@ -35,28 +35,28 @@ namespace Cherbetter.Controllers
         }
         
         [HttpDelete("{id}")]
-        public string DeleteTicketByID(int id)
+        public object DeleteTicketByID(int id)
         {
             int result = ticketData.DeleteTicketByID(id);
 
             if (result == 1)
             {
-                return "Delete worked correctly";
+                return new { Success = true, Message = "Delete worked correctly" };
             }
             else
             {
-                return "Delete did not go through";
+                return new { Success = true, Message = "Delete did not go through" };
             }
         }
 
-        [HttpPost] //idk if this is right or not
+        [HttpPost]
         public object AddTicket(Ticket t)
         {
             int result = ticketData.AddTicket(t);
 
             if (result == 1)
             {
-                return new { Success = true, Message = "Ticket Added"};
+                return new { Success = true, Message = "Ticket Added" };
             }
             else
             {
@@ -64,19 +64,19 @@ namespace Cherbetter.Controllers
             }
         }
 
-        [HttpPut] //idk if this is right either
-        public string UpdateTicket(Ticket t)
+        [HttpPut]
+        public object UpdateTicket(Ticket t)
         {
 
             int result = ticketData.UpdateTicket(t);
 
             if (result == 1)
             {
-                return "Ticket updated";
+                return new { Success = true, Message = "Ticket updated" };
             }
             else
             {
-                return "Something went wrong, ticket did not update";
+                return new { Success = true, Message = "Something went wrong, ticket did not update" };
             }
         }
     }
