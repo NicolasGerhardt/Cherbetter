@@ -1,4 +1,6 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { TicketDataService } from '../ticket-data';
+import { Ticket } from '../interfaces/ticket';
 
 @Component({
     selector: 'app-add-ticket',
@@ -7,8 +9,27 @@
 })
 /** add-ticket component*/
 export class AddTicketComponent {
-    /** add-ticket ctor */
-    constructor() {
+  title: string;
+  description: string;
 
+/** add-ticket ctor */
+    constructor(private ticketData: TicketDataService) {
+
+  }
+
+  submitTicket() {
+    if (this.title == '' || this.description == '') {
+      return;
     }
+
+    let newTicket: Ticket = {
+      TID : 0,
+      Title: this.title,
+      TDescription: this.description,
+      TStatus: '0',
+      Resolution: '',
+    }
+
+    this.ticketData.addTicket(newTicket).subscribe();
+  }
 }

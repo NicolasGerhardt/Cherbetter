@@ -27,11 +27,10 @@ import { FavoriteComponent } from './favorite/favorite.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'favorite/:email', component: FavoriteComponent },
       { path: 'ticket/:id', component: TicketDetailComponent },
-      { path: 'ticket/add', component: AddTicketComponent },
+      { path: 'newticket', component: AddTicketComponent },
       { path: 'ticket', component: TicketComponent },
-      { path: '', component: HomeComponent, pathMatch: 'full' }
+      { path: '', component: TicketComponent }
     ])
   ],
   providers: [TicketComponent, AddTicketComponent],

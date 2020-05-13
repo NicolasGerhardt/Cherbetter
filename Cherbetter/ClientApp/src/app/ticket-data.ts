@@ -21,4 +21,8 @@ export class TicketDataService {
   addFavorite(favorite: Favorite) {
     return this.http.post<Favorite>('/api/favorites', favorite);
   }
+
+  addTicket(newTicket: Ticket) {
+    return this.http.post<Ticket>('/api/ticket', newTicket);
+  }
 }
