@@ -19,14 +19,15 @@ import { FavoriteComponent } from './favorite/favorite.component';
     HomeComponent,
     TicketComponent,
     AddTicketComponent,
-    TicketDetailComponent
+    TicketDetailComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'ticket/:email', component: FavoriteComponent },
+      { path: 'favorite/:email', component: FavoriteComponent },
       { path: 'ticket/:id', component: TicketDetailComponent },
       { path: 'ticket/add', component: AddTicketComponent },
       { path: 'ticket', component: TicketComponent },
