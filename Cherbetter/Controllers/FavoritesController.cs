@@ -25,6 +25,15 @@ namespace Cherbetter.Controllers
 
 
         /// <summary>
+        /// Return all of the favorites for a specific email
+        /// </summary>
+        [HttpGet("email/{email}")]
+        public IEnumerable<Favorite> GetFavoritesByID(string email)
+        {
+            return this.favoritesData.GetFavoritesByEmail(email);
+        }
+
+        /// <summary>
         /// Return all of the favorites for a specific ticket
         /// </summary>
         /// <param name="id"></param>
