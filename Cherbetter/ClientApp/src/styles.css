@@ -14,3 +14,36 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.resolution {
+  border: solid 2px #a0a0a0;
+  padding: 10px 20px;
+  background: #eee;
+}
+label {
+  display: block;
+  margin-top: 17px;
+  margin-bottom: 2px;
+}
+input {
+  display: block;
+  margin-bottom: 13px;
+}
+.question-container p {
+  background: #9fffc6;
+  max-width: 640px;
+  border: solid 1px;
+  border-top: 0;
+  padding: 10px 15px;
+}
+.question-container h3 {
+  background: #c8ffc1;
+  padding: 10px 15px;
+  border: solid 1px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-width: 640px;
+  margin-bottom: 0;
+}
+
+
+

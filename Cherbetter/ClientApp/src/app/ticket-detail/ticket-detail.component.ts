@@ -15,6 +15,8 @@ export class TicketDetailComponent {
 
   id: number;
   ticket: Ticket;
+  email: string;
+  resolution: string;
 
     /** ticket-detail ctor */
   constructor(private ticketData: TicketDataService, private route: ActivatedRoute, private router: Router) {
@@ -37,6 +39,7 @@ export class TicketDetailComponent {
   }
 
   AddResolution() {
+    this.ticket.Resolution = 'Resolved By: ' + this.email + ' ' + this.resolution
     this.ticketData.resolveTicket(this.ticket).subscribe();
     this.router.navigate(['/ticket/']);
   }
