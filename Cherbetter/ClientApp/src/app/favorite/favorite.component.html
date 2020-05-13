@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let f of favorites">{{ f.email }} <button>Delete</button></li> 
+  <li *ngFor="let f of favorites">{{ f.email }}</li> 
 </ul>
 <input type="text" placeholder="email" [(ngModel)]="email" />
 <input type="button" value="Favorite" (click)="AddEmailFavorite()" />
