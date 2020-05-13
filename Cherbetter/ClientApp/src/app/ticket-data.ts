@@ -17,4 +17,8 @@ export class TicketDataService {
   getFavoritesByTicketID(TicketID: number) {
     return this.http.get<Favorite[]>(`/api/favorites/${TicketID}`);
   }
+
+  addFavorite(favorite: Favorite) {
+    return this.http.post<Favorite>('/api/favorites', favorite);
+  }
 }
