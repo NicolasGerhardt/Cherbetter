@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Ticket } from '../interfaces/ticket';
 import { TicketDataService } from '../ticket-data';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-ticket-detail',
@@ -17,7 +17,7 @@ export class TicketDetailComponent {
   ticket: Ticket;
 
     /** ticket-detail ctor */
-  constructor(private ticketData: TicketDataService, private route: ActivatedRoute) {
+  constructor(private ticketData: TicketDataService, private route: ActivatedRoute, private router: Router) {
 
   }
 
@@ -38,6 +38,7 @@ export class TicketDetailComponent {
 
   AddResolution() {
     this.ticketData.resolveTicket(this.ticket).subscribe();
+    this.router.navigate(['/ticket/']);
   }
 
 

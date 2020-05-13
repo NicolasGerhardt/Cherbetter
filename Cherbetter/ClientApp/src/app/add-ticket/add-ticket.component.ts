@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TicketDataService } from '../ticket-data';
 import { Ticket } from '../interfaces/ticket';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-add-ticket',
@@ -13,7 +14,7 @@ export class AddTicketComponent {
   description: string;
 
 /** add-ticket ctor */
-    constructor(private ticketData: TicketDataService) {
+  constructor(private ticketData: TicketDataService, private router: Router) {
 
   }
 
@@ -31,5 +32,6 @@ export class AddTicketComponent {
     }
 
     this.ticketData.addTicket(newTicket).subscribe();
+    this.router.navigate(['/ticket/']);
   }
 }
