@@ -16,6 +16,16 @@ namespace Cherbetter.Services
             connString = config.GetConnectionString("default");
         }
 
+        public int AddFavorite(Favorite favorite)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteFavorite(Favorite favorite)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Favorite> GetFavoritesByEmail(string email)
         {
             throw new NotImplementedException();
@@ -26,5 +36,9 @@ namespace Cherbetter.Services
             throw new NotImplementedException();
         }
 
+        public int UpdateFavorite(Favorite favorite)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
