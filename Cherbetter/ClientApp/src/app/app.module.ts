@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { AddTicketComponent } from './add-ticket/add-ticket.component';
 import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TicketDetailComponent } from './ticket-detail/ticket-detail.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: 'ticket/:email', component: FavoriteComponent },
       { path: 'ticket/:id', component: TicketDetailComponent },
       { path: 'ticket/add', component: AddTicketComponent },
       { path: 'ticket', component: TicketComponent },

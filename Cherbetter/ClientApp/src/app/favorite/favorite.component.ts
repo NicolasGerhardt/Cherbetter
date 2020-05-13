@@ -1,4 +1,10 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Ticket } from '../interfaces/ticket';
+import { TicketDataService } from '../ticket-data';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
     selector: 'app-favorite',
@@ -8,7 +14,21 @@
 /** favorite component*/
 export class FavoriteComponent {
     /** favorite ctor */
-    constructor() {
 
-    }
+  email: string;
+  tickets: Ticket[];
+
+  constructor(private ticketData: TicketDataService, private route: ActivatedRoute) {
+
+  }
+
+  ngOnInit() {
+    this.ticketData.getFavoritesByEmail().subscribe(
+      (data: Ticket[]) => {
+        this.tickets = data;
+      },
+      error => console.error(error)
+    );
+  }
+
 }

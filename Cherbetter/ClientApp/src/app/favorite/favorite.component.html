@@ -1,1 +1,10 @@
-﻿<div style="border: 1px solid red">favorite Component</div>
+<h1>Favorite Tickets for {{favorite.email}}</h1>
+
+<div *ngFor="let ticket of tickets">
+  <h2>Ticket Number {{ticket.tid}}</h2>
+  <h3>{{ticket.title}}</h3>
+  <p>{{ticket.tDescription}}</p>
+
+  <hr />
+</div>
+
