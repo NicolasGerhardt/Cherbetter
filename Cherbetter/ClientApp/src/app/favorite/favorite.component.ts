@@ -16,6 +16,7 @@ export class FavoriteComponent {
     /** favorite ctor */
   id: number;
   favorites: Favorite[];
+  email: string;
 
   constructor(private ticketData: TicketDataService, private route: ActivatedRoute) {
 
@@ -33,6 +34,15 @@ export class FavoriteComponent {
       error => console.error(error)
     );
 
+  }
+
+  AddEmailFavorite() {
+    let fav: Favorite = {
+      email: this.email,
+      ticketID: this.id
+    }
+    this.ticketData.addFavorite(fav).subscribe();
+    
   }
 
 }
