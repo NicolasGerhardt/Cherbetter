@@ -1,4 +1,4 @@
-<h2>Open Tickets</h2>
+<h2 class="open-tickets">Open Tickets</h2>
   <div *ngFor="let ticket of tickets">
     <div *ngIf="ticket.tStatus == '0'">
       <a href="/ticket/{{ticket.tid}}"><h3>{{ticket.title}}</h3> </a>
@@ -8,7 +8,7 @@
     
   </div>
 
-  <h2>Closed Tickets</h2>
+  <h2 class="closed-tickets">Closed Tickets</h2>
   <div *ngFor="let ticket of tickets">
     <div *ngIf="ticket.tStatus == '1'">
       <a href="/ticket/{{ticket.tid}}"><h3>{{ticket.title}}</h3> </a>

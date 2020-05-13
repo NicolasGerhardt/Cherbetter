@@ -1,5 +1,5 @@
 
-<h4>Ticket Number: {{ticket.tid}}</h4>
+<h4 class="ticket-num">Ticket Number: {{ticket.tid}}</h4>
 <div class="question-container">
   <h3>Title: {{ticket.title}}</h3>
   <p>{{ticket.tDescription}}</p>
@@ -16,7 +16,11 @@
   <app-favorite></app-favorite>
 </div>
 
+<hr />
+
 <div *ngIf="ticket.tStatus == '1'" class="resolution">
-    <h4>Resolution</h4>
-    {{ticket.resolution}}
+  <div class="resolution-container">
+    <h3>Resolution</h3>
+    <p>{{ticket.resolution}}</p>
+  </div>
   </div>
