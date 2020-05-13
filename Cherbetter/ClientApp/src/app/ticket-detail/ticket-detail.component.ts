@@ -33,6 +33,12 @@ export class TicketDetailComponent {
     );
     console.log(this.ticket);
 
+
   }
+
+  AddResolution() {
+    this.ticketData.resolveTicket(this.ticket).subscribe();
+  }
+
 
 }

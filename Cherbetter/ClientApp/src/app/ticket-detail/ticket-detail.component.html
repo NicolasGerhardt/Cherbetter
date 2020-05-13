@@ -1,4 +1,9 @@
 <h2>Ticket Number {{ticket.tid}}</h2>
 <h3>{{ticket.title}}</h3>
 <p>{{ticket.tDescription}}</p>
+
+<input type="text" placeholder="resolution" [(ngModel)]="ticket.resolution" />
+<input type="button" value="Resolution" (click)="AddResolution()" />
+
+<hr />
 <app-favorite></app-favorite>

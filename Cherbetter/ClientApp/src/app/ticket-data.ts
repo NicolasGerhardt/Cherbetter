@@ -25,4 +25,9 @@ export class TicketDataService {
   addTicket(newTicket: Ticket) {
     return this.http.post<Ticket>('/api/ticket', newTicket);
   }
+
+  resolveTicket(ticket: Ticket) {
+    return this.http.put<Ticket>(`/api/ticket/resolve/${ticket.TID}`, ticket);
+  }
+
 }

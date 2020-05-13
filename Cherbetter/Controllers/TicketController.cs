@@ -79,5 +79,25 @@ namespace Cherbetter.Controllers
                 return new { Success = true, Message = "Something went wrong, ticket did not update" };
             }
         }
+
+        [HttpPut("resolve/{id}")]
+        public object Resolve(Ticket updatedTicket)
+        {
+            var ticket = ticketData.GetTicketByID(updatedTicket.TID);
+            ticket.TStatus = "1";
+            ticket.Resolution = updatedTicket.Resolution;
+
+            var result = ticketData.UpdateTicket(ticket);
+
+            if (result == 1)
+            {
+                return new { Success = true, Message = "Ticket updated" };
+            }
+            else
+            {
+                return new { Success = true, Message = "Something went wrong, ticket did not update" };
+            }
+        }
+
     }
 }
